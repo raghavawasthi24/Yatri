@@ -1,5 +1,7 @@
-// import { useEffect } from 'react';
+import React from 'react';
 import './App.css';
+import { Route,Routes } from 'react-router-dom';
+import Home from "./pages/home/Home"
 // import axios from 'axios';
 
 function App() {
@@ -42,7 +44,11 @@ function App() {
 
 
   return (
-    <>jbj</>
+    <>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+    </Routes>
+    </>
   )
 }
 
