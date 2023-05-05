@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Home from "./pages/home/Home"
+import Sell from './pages/Sell/Sell';
 // import axios from 'axios';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/transferTicket" element={<Sell/>}/>
     </Routes>
     </>
   )
