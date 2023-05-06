@@ -21,8 +21,8 @@
     justify-content: center;
 }
 .trainInfo{
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
 }
 .trainInfo p{
     font-size: 2rem;
@@ -52,6 +52,14 @@
     justify-content: space-between;
     align-items: center;
     margin: 0.1rem 0;
+}
+.loading{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.285);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .hide{
     display: none;

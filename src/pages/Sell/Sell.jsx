@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./Sell.css";
 import { Button, Checkbox, TextField } from '@mui/material';
 import axios from 'axios';
+import SyncLoader from "react-spinners/SyncLoader";
 
 const Sell = () => {
 
@@ -30,6 +31,7 @@ const Sell = () => {
   const [pnrDetails, setPnrDetails] = useState(initialvalues);
   const [ticketDetails, setTicketDetails] = useState("");
   const [seatInfo, setSeatInfo] = useState([]);
+  let [loading, setLoading] = useState(false);
   // const [toggle, setToggle] = useState(true);
 
   const inputHandler = (e) => {
@@ -38,6 +40,7 @@ const Sell = () => {
   }
 
   const checkPNR = () => {
+    setLoading(true);
     axios.get(`https://pnr-status-indian-railway.p.rapidapi.com/pnr-check/${pnrDetails.pnr}`, {
       method: 'GET',
       headers: {
@@ -96,8 +99,10 @@ const Sell = () => {
       setTicketDetails(ticketInfo);
       console.log(seatInfo);
       console.log(ticketDetails)
+      setLoading(false);
     }).catch((err) => {
       console.log(err);
+      setLoading(false);
     })
 
 
@@ -127,7 +132,15 @@ const Sell = () => {
 
 
   return (
-    <div className='sell'>
+    <>
+    <div className={loading ? "loading" : "hide"}>
+          <SyncLoader
+            color={'#4054B2'}
+            loading={loading}
+            size={15}
+          />
+        </div>
+    <div className={loading?"hide":'sell'}>
       <div>
         <div className='pnr'>
           <div className='pnrStatus'>
@@ -142,8 +155,8 @@ const Sell = () => {
         <div>
           <div className='trainInfo'>
             <p>({ticketDetails.trainNo}){ticketDetails.trainName}</p>
-            <Button variant='outlined'>Confirm</Button>
           </div>
+          <div><Button variant='outlined'>Confirm</Button></div>
           <div className='stationInfo'>
             <div>
               <p>{ticketDetails.boardingStation}({ticketDetails.boardingCode})</p>
@@ -188,6 +201,7 @@ const Sell = () => {
 
       </div>
     </div>
+    </>
   )
 }
 
