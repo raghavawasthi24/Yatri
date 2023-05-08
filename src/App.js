@@ -1,6 +1,10 @@
- import { useEffect } from 'react';
+import {React,useEffect} from 'react';
 import './App.css';
- import axios from 'axios';
+import { Route,Routes } from 'react-router-dom';
+import Home from "./pages/home/Home"
+import Sell from './pages/Sell/Sell';
+import Buy from './pages/Buy/Buy';
+import axios from 'axios';
 
 function App() {
 
@@ -42,7 +46,13 @@ function App() {
 
 
   return (
-    <>jbj</>
+    <>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/transferTicket" element={<Sell/>}/>
+      <Route path="/buy" element={<Buy/>}/>
+    </Routes>
+    </>
   )
 }
 

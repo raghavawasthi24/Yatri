@@ -1,0 +1,66 @@
+/* .p{
+    display: none;
+} */
+.sell{
+    width: 100%;
+    
+}
+.pnr{
+    background-color: brown;
+    padding:5rem 0;
+}
+.pnrStatus{
+    width:90%;
+    padding:3rem 0;
+    margin:auto;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.trainInfo{
+    /* display: flex;
+    justify-content: space-between; */
+}
+.trainInfo p{
+    font-size: 2rem;
+    margin:2rem;
+}
+
+.stationInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:90%;
+    margin:2rem auto;
+}
+.seatInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+    margin:2rem auto;
+    padding:0.5rem 1rem;
+    border:1px solid grey;
+}
+.seatPassengerInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.1rem 0;
+}
+.loading{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.285);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide{
+    display: none;
+}
